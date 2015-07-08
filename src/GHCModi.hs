@@ -57,6 +57,8 @@ argspec = [ Option "b" ["boundary"]
             "print as a list of Lisp"
           , Option "g" []
             (ReqArg (\s opts -> opts { ghcUserOptions = s : ghcUserOptions opts }) "flag") "specify a ghc flag"
+          , Option "" ["with-cabal"]
+            (ReqArg (\s opts -> opts { cabalProgram = s }) "PROG") "cabal-install executable to use"
           ]
 
 usage :: String
